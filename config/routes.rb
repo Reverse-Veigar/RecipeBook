@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'user/index'
+
+  get 'user/show'
+
   get 'home/index'
 
   devise_for :users
@@ -6,4 +10,6 @@ Rails.application.routes.draw do
   resources :users
 
   root to: 'home#index'
+
+  patch 'like', to: 'users#like', as: 'like'
 end
